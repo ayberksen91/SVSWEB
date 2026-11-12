@@ -1,0 +1,19 @@
+{
+  "name": "svsweb-platform",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace apps/web run dev",
+    "build": "npm --workspace apps/web run build",
+    "preview": "npm --workspace apps/web run preview",
+    "check": "npm --workspace apps/web run check",
+    "db:generate": "bash ./scripts/db-generate.sh",
+    "db:apply": "wrangler d1 execute SVSWEB --local --file ./db/schema.sql",
+    "cf:dev": "wrangler pages dev ./apps/web/dist --d1=SVSWEB --compatibility-date=2025-01-01"
+  },
+  "devDependencies": {
+    "wrangler": "^3.99.0"
+  }
+}

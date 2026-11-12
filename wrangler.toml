@@ -1,0 +1,16 @@
+name = "svsweb"
+main = "./functions/health.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+APP_NAME = "Superview Systems"
+APP_ENV = "development"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "svsweb"
+database_id = "replace-me"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "svsweb-media"
